@@ -1,0 +1,30 @@
+<mat-accordion *ngIf="titles">
+  <mat-expansion-panel *ngFor="let title of titles">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{title.name}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list>
+      <mat-list-item>
+        <label>ID</label>
+        {{title.id}}
+      </mat-list-item>
+      <mat-list-item>
+        <label>Full Name</label>
+        {{title.full_name}}
+      </mat-list-item>
+      <mat-list-item>
+        <label>Season</label>
+        {{title.season_number ? title.season_number : '--'}}
+      </mat-list-item>
+      <mat-list-item>
+        <label>Episode</label>
+        {{title.episode_number ? title.episode_number : '--'}}
+      </mat-list-item>
+    </mat-list>
+    <button mat-button (click)="removeTitle.emit(title)" color="warn">
+      <mat-icon>close</mat-icon>
+      Remove from my list</button>
+  </mat-expansion-panel>
+</mat-accordion>

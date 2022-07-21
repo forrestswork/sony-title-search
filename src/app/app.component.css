@@ -1,0 +1,8 @@
+main{
+  padding: 1.5rem;
+}
+
+mat-form-field{
+  width: auto;
+  display: block;
+}

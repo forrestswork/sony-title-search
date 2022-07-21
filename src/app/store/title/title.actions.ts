@@ -1,0 +1,23 @@
+import {createAction, props} from '@ngrx/store';
+import {Title} from './title.interfaces';
+
+export const LOAD_TITLES = '[Title] Load Titles';
+export const SET_TITLES = '[Title] Set Titles';
+export const LOAD_MY_TITLES = '[Title] Load My Titles';
+export const SET_MY_TITLES = '[Title] Set My Titles';
+export const ADD_TITLE = '[Title] Add Title';
+export const REMOVE_TITLE = '[Title] Remove Title';
+export const MARK_AS_PRISTINE = '[Title] Mark As Pristine';
+export const SAVE_MY_TITLES = '[Title] Save My Titles';
+export const SET_FILTER = '[Title] Set Filter';
+export const RESET_FILTER = '[Title] Reset Filter';
+export const loadTitles = createAction(LOAD_TITLES);
+export const setTitles = createAction(SET_TITLES, props<{titles: Title[]}>());
+export const loadMyTitles = createAction(LOAD_MY_TITLES);
+export const setMyTitles = createAction(SET_MY_TITLES, props<{titles: Title[]}>());
+export const saveMyTitles = createAction(SAVE_MY_TITLES);
+export const markAsPristine = createAction(MARK_AS_PRISTINE);
+export const addTitle = createAction(ADD_TITLE, props<{id: string}>());
+export const removeTitle = createAction(REMOVE_TITLE, props<{id: string}>());
+export const setFilter = createAction(SET_FILTER, props<{filter: string | null}>());
+export const resetFilter = createAction(RESET_FILTER);
