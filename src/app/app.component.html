@@ -1,33 +1,10 @@
 <mat-toolbar color="primary">
   <span>My Titles</span>
   <span [style.flex]="1"></span>
-
-  <button mat-button (click)="saveMyTitles()" *ngIf="enableSave$ | async">
-    <mat-icon>save</mat-icon>
-    Save My Titles
-  </button>
+  <app-save-button></app-save-button>
 </mat-toolbar>
 
-<main *ngIf="myTitles$ | async as myTitles;">
-
-  <mat-form-field appearance="outline">
-    <mat-label>Search the titles</mat-label>
-    <input
-      type="text"
-      placeholder="Start typing your title"
-      matInput
-      [formControl]="search"
-      [matAutocomplete]="auto">
-    <mat-autocomplete autoActiveFirstOption  #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredTitles$ | async" [value]="option.name" (click)="selectTitle(option)">
-        {{option.name}}
-      </mat-option>
-    </mat-autocomplete>
-  </mat-form-field>
-
+<main>
+  <app-title-search></app-title-search>
   <app-title-list></app-title-list>
-
-  <ng-template #searchTitles>
-      <p>You have not selected any titles yet, search our database to get started.</p>
-  </ng-template>
 </main>

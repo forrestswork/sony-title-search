@@ -20,6 +20,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatListModule} from '@angular/material/list';
 import {TitleListModule} from './components/title-list/title-list.module';
+import {TitleSearchModule} from './components/title-search/title-search.module';
+import {SaveButtonModule} from './components/save-button/save-button.module';
 
 @NgModule({
   declarations: [
@@ -35,20 +37,10 @@ import {TitleListModule} from './components/title-list/title-list.module';
       maxAge: 25
     }),
     EffectsModule.forRoot([TitleEffects]),
-    ReactiveFormsModule,
-
-    // material ui components
-    // note that we would not normally load these in the app root,
-    // its preferable to only load the specific components you need in feature modules
-    MatAutocompleteModule,
-    MatButtonModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatIconModule,
-    MatInputModule,
-    MatSnackBarModule,
     MatToolbarModule,
     TitleListModule,
+    TitleSearchModule,
+    SaveButtonModule,
   ],
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 2500}}

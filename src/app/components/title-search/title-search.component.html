@@ -1,0 +1,14 @@
+<mat-form-field appearance="outline">
+  <mat-label>Search the titles</mat-label>
+  <input
+    type="text"
+    placeholder="Start typing your title"
+    matInput
+    [formControl]="search"
+    [matAutocomplete]="auto">
+  <mat-autocomplete autoActiveFirstOption  #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredTitles$ | async" [value]="option.name" (click)="selectTitle(option)">
+      {{option.name}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>
