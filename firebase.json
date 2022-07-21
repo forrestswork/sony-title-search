@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "dist/sony-title-search",
     "ignore": [
       "firebase.json",
       "**/.*",
